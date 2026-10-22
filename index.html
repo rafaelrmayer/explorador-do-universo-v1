@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07152f">
+  <meta name="description" content="Um pequeno universo para explorar, experimentar e descobrir.">
+  <title>Explorador do Universo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <button class="brand" data-view="home" aria-label="Voltar ao início">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>Explorador <b>do Universo</b></span>
+      </button>
+      <button class="sound-toggle" id="motion-toggle" aria-pressed="false" title="Alternar movimento">✧ <span>Movimento suave</span></button>
+    </header>
+
+    <main id="app-main">
+      <section class="view active" id="view-home" aria-labelledby="home-title">
+        <div class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow"><span class="status-dot"></span> UM UNIVERSO PARA DESCOBRIR</p>
+            <h1 id="home-title">Explorador<br><span>do Universo</span></h1>
+            <p class="hero-subtitle">Vamos descobrir o que acontece lá fora?</p>
+            <p class="hero-description">Toque, experimente e descubra. Aqui, a curiosidade é quem guia a viagem.</p>
+            <button class="primary-button" data-view="experiment">Começar a explorar <span aria-hidden="true">→</span></button>
+          </div>
+          <div class="solar-art" aria-label="Ilustração do espaço com planetas" role="img">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+            <div class="planet planet-blue"></div><div class="planet planet-ring"></div>
+            <div class="planet planet-small"></div><div class="sun-art"></div>
+            <span class="spark spark-a">✦</span><span class="spark spark-b">·</span><span class="spark spark-c">✧</span>
+          </div>
+        </div>
+        <div class="section-heading"><div><p class="eyebrow">ESCOLHA SUA MISSÃO</p><h2>Por onde vamos?</h2></div><span class="heading-note">Sem pressa. Explore no seu ritmo.</span></div>
+        <div class="mission-grid">
+          <button class="mission-card card-explore" data-view="explore">
+            <span class="card-icon">🪐</span><span class="card-title">Explorar</span><span class="card-copy">Conheça planetas e lugares do espaço.</span><span class="card-arrow">Abrir mapa <b>↗</b></span>
+          </button>
+          <button class="mission-card card-experiment" data-view="experiment">
+            <span class="card-icon">🚀</span><span class="card-title">Experimentar</span><span class="card-copy">Mude a gravidade e veja o que acontece.</span><span class="card-arrow">Ir ao laboratório <b>↗</b></span>
+          </button>
+          <button class="mission-card card-moon" data-view="moon">
+            <span class="card-icon">🌙</span><span class="card-title">Lua</span><span class="card-copy">Descubra as fases da nossa vizinha.</span><span class="card-arrow">Ver a Lua <b>↗</b></span>
+          </button>
+          <button class="mission-card card-observe" data-view="observe">
+            <span class="card-icon">🔭</span><span class="card-title">Observar</span><span class="card-copy">Aprenda a olhar para o céu com curiosidade.</span><span class="card-arrow">Olhar o céu <b>↗</b></span>
+          </button>
+        </div>
+        <div class="gentle-note"><span aria-hidden="true">✦</span><p><b>Seu universo, seu ritmo.</b> Você pode repetir qualquer experiência quantas vezes quiser.</p></div>
+      </section>
+
+      <section class="view" id="view-explore" aria-labelledby="explore-title">
+        <button class="back-link" data-view="home">← Início</button>
+        <p class="eyebrow">MAPA DO UNIVERSO</p><h1 class="page-title" id="explore-title">Escolha um mundo</h1>
+        <p class="page-intro">Toque em um objeto para conhecer um pouco mais sobre ele.</p>
+        <div class="world-grid">
+          <button class="world-card" data-world="Sol"><span class="world-emoji">☀️</span><b>Sol</b><small>Uma estrela que nos dá luz</small></button>
+          <button class="world-card" data-world="Mercúrio"><span class="world-emoji">⚫</span><b>Mercúrio</b><small>O planeta mais próximo do Sol</small></button>
+          <button class="world-card" data-world="Vênus"><span class="world-emoji">🟠</span><b>Vênus</b><small>Um mundo coberto por nuvens</small></button>
+          <button class="world-card" data-world="Terra"><span class="world-emoji">🌍</span><b>Terra</b><small>Nossa casa azul</small></button>
+          <button class="world-card" data-world="Lua"><span class="world-emoji">🌙</span><b>Lua</b><small>A vizinha da Terra</small></button>
+          <button class="world-card" data-world="Marte"><span class="world-emoji">🔴</span><b>Marte</b><small>O planeta vermelho</small></button>
+          <button class="world-card" data-world="Júpiter"><span class="world-emoji">🟤</span><b>Júpiter</b><small>O maior planeta do Sistema Solar</small></button>
+          <button class="world-card" data-world="Saturno"><span class="world-emoji">🪐</span><b>Saturno</b><small>Famoso por seus anéis</small></button>
+          <button class="world-card" data-world="Urano"><span class="world-emoji">🔵</span><b>Urano</b><small>Um gigante gelado</small></button>
+          <button class="world-card" data-world="Netuno"><span class="world-emoji">🔷</span><b>Netuno</b><small>Um mundo distante e ventoso</small></button>
+        </div>
+        <div class="detail-panel hidden" id="world-detail" aria-live="polite">
+          <span class="detail-emoji" id="detail-emoji">🌍</span><div><p class="eyebrow">OLÁ, UNIVERSO!</p><h2 id="detail-title">Terra</h2><p id="detail-copy"></p></div>
+          <button class="secondary-button" data-view="experiment">Experimentar gravidade →</button>
+        </div>
+      </section>
+
+      <section class="view" id="view-experiment" aria-labelledby="experiment-title">
+        <button class="back-link" data-view="home">← Início</button>
+        <p class="eyebrow">LABORATÓRIO ESPACIAL</p><h1 class="page-title" id="experiment-title">Vamos brincar com a gravidade</h1>
+        <p class="page-intro">Mude a força da gravidade e solte a bolinha. O que será que acontece?</p>
+        <div class="lab-layout">
+          <div class="simulation-panel">
+            <div class="simulation-top"><span class="live-indicator"><i></i> EXPERIMENTO</span><button class="icon-button" id="reset-gravity" aria-label="Reiniciar experiência" title="Reiniciar">↻</button></div>
+            <canvas id="gravity-canvas" aria-label="Simulação de uma bolinha caindo em direção a um planeta"></canvas>
+            <div class="simulation-caption"><span>ESPAÇO DE TESTE</span><span id="gravity-readout">Gravidade média</span></div>
+          </div>
+          <div class="controls-panel">
+            <span class="step-number">01 / EXPERIMENTE</span><h2>Controle a gravidade</h2>
+            <p>Deslize o controle. Depois, solte a bolinha e observe.</p>
+            <label class="range-label" for="gravity-range"><span>Gravidade</span><b id="gravity-value">5</b></label>
+            <input id="gravity-range" type="range" min="1" max="10" value="5" step="1">
+            <div class="range-ends"><span>Mais suave</span><span>Mais forte</span></div>
+            <button class="primary-button full-button" id="drop-button">▶ Soltar a bolinha</button>
+            <button class="secondary-button full-button" id="again-button">↻ Tentar novamente</button>
+            <div class="result-box" aria-live="polite"><span class="result-star">✦</span><div><b id="result-title">O que você acha que vai acontecer?</b><p id="result-copy">Faça uma experiência para descobrir.</p></div></div>
+          </div>
+        </div>
+        <div class="science-note"><span>💡</span><p><b>Uma ideia importante</b><br>Na Terra, a gravidade puxa os objetos em direção ao chão. Vamos descobrir como a força muda o movimento!</p></div>
+      </section>
+
+      <section class="view" id="view-moon" aria-labelledby="moon-title">
+        <button class="back-link" data-view="home">← Início</button>
+        <p class="eyebrow">NOSSA VIZINHA CÓSMICA</p><h1 class="page-title" id="moon-title">Olha só a Lua!</h1>
+        <p class="page-intro">Mova o controle e observe como a parte iluminada parece mudar.</p>
+        <div class="moon-lab">
+          <div class="moon-stage"><div class="moon-sun">☀️<small>Sol</small></div><div class="earth-mini">🌍<small>Terra</small></div><div class="moon-orbit"></div><div class="moon-display" id="moon-display"><div class="moon-shadow" id="moon-shadow"></div></div><div class="moon-label" id="moon-label">Lua cheia</div></div>
+          <div class="moon-controls"><p class="eyebrow">MUDE A POSIÇÃO</p><h2>Onde está a Lua?</h2><input id="moon-range" type="range" min="0" max="7" value="4" step="1" aria-label="Posição da Lua"><div class="range-ends"><span>Nova</span><span>Cheia</span></div><div class="phase-info"><span id="phase-emoji">🌕</span><div><b id="phase-name">Lua cheia</b><p id="phase-copy">A face voltada para nós aparece totalmente iluminada.</p></div></div><div class="science-note compact"><span>💡</span><p>A Lua não muda de forma. O Sol ilumina metade dela, e nós vemos partes diferentes dessa metade.</p></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="view-observe" aria-labelledby="observe-title">
+        <button class="back-link" data-view="home">← Início</button>
+        <p class="eyebrow">OLHOS NO CÉU</p><h1 class="page-title" id="observe-title">Vamos observar?</h1>
+        <p class="page-intro">Não precisamos de um telescópio para começar. A primeira ferramenta é a curiosidade.</p>
+        <div class="observe-layout"><div class="sky-card"><div class="sky-illustration"><span class="sky-star s1">✦</span><span class="sky-star s2">✧</span><span class="sky-star s3">·</span><span class="sky-star s4">✦</span><span class="sky-moon">☾</span><span class="sky-star s5">✧</span><span class="sky-star s6">·</span></div><h2>Pequena missão do céu</h2><p>Quando estiver escuro e seguro, olhe para cima com um adulto e veja o que consegue encontrar.</p></div>
+          <div class="observation-list"><button class="observation-item" data-observation="moon"><span>🌙</span><div><b>Procure a Lua</b><small>Ela pode parecer fina, redonda ou nem estar visível.</small></div><span>↗</span></button><button class="observation-item" data-observation="stars"><span>⭐</span><div><b>Encontre estrelas</b><small>Elas parecem pequenos pontos de luz no céu.</small></div><span>↗</span></button><button class="observation-item" data-observation="planet"><span>🪐</span><div><b>Procure um planeta</b><small>Alguns planetas parecem estrelas muito brilhantes.</small></div><span>↗</span></button><div class="observation-feedback" id="observation-feedback" aria-live="polite">Escolha uma missão para receber uma dica.</div></div></div>
+      </section>
+    </main>
+    <footer><span>✦ Explorador do Universo</span><span>Feito para descobrir no seu ritmo.</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
